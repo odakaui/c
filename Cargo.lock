@@ -67,6 +67,22 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "14c189c53d098945499cdfa7ecc63567cf3886b3332b312a5b4585d8d3a6a610"
 
 [[package]]
+name = "c"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "blake2",
+ "chrono",
+ "clap",
+ "dirs",
+ "hex",
+ "lazy_static",
+ "rusqlite",
+ "serde",
+ "serde-pickle",
+]
+
+[[package]]
 name = "cfg-if"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -122,22 +138,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "87eba3c8c7f42ef17f6c659fc7416d0f4758cd3e58861ee63c5fa4a4dde649e4"
 dependencies = [
  "os_str_bytes",
-]
-
-[[package]]
-name = "counter"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "blake2",
- "chrono",
- "clap",
- "dirs",
- "hex",
- "lazy_static",
- "rusqlite",
- "serde",
- "serde-pickle",
 ]
 
 [[package]]
