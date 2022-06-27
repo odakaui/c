@@ -58,7 +58,7 @@ If you don't know what a hash is, it looks like this `42069420` except different
 Probably.
 
 Of course, `c` wouldn't be `c` without the ability to display the number of events added to the database for a given project (the count).
-This functionality can be unlocked with the command `c count [PROJECT_NAME]`.
+This functionality can be unlocked with the command `c count [DRACULA]`.
 
 Finally, for power users only, `c` has one additional command.
 
