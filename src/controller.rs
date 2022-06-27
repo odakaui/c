@@ -1,11 +1,12 @@
 use super::database;
 use super::Event;
 use anyhow::Result;
-use chrono::{NaiveDateTime, Utc};
+use chrono::TimeZone;
+use chrono::Local;
 use rusqlite::Connection;
 
 pub fn add(conn: &Connection, project_name: &str) -> Result<()> {
-    let date = Utc::now().timestamp();
+    let date = Local::now().timestamp();
     let event = create_event(conn, date, project_name)?;
 
     database::add_event(conn, &event)?;
@@ -26,7 +27,7 @@ pub fn list(conn: &Connection, project_name: &str) -> Result<()> {
     let event_list = database::get_events(conn, project_id)?;
 
     for e in event_list {
-        let date = NaiveDateTime::from_timestamp(e.date, 0).format("%Y-%m-%d %H:%M:%S");
+        let date = Local.timestamp(e.date, 0).format("%Y-%m-%d %H:%M:%S");
         println!("{} {}", e.hash, date);
     }
 
