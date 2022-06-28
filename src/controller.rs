@@ -64,7 +64,7 @@ fn print_count(conn: &Connection, project_name: &str) -> Result<()> {
     let project_id = database::get_project_id(conn, project_name)?;
     let count = database::get_event_count(conn, project_id)?;
 
-    println!("{}", count);
+    println!("total: {}", count);
 
     Ok(())
 }
